@@ -41,3 +41,7 @@ def plugin_settings(settings):  # pylint: disable=unused-argument
     # Once a user has watched this percentage of a video, mark it as complete:
     # (0.0 = 0%, 1.0 = 100%)
     settings.COMPLETION_VIDEO_COMPLETE_PERCENTAGE = 0.95
+
+    # Settings for tracking
+    settings.COMPLETION_ENABLE_EVENTTRACKING = False
+    settings.COMPLETION_TRACKED_BLOCK_TYPE_BLACKLIST = []

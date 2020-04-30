@@ -26,6 +26,9 @@ class CompletionAppConfig(AppConfig):
                 'common': {
                     'relative_path': 'settings.common',
                 },
+                'aws': {
+                    'relative_path': 'settings.aws',
+                },
             },
         },
         'signals_config': {

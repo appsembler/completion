@@ -14,6 +14,7 @@ from model_utils.models import TimeStampedModel
 from opaque_keys.edx.django.models import CourseKeyField, UsageKeyField
 from opaque_keys.edx.keys import CourseKey
 
+from . import tracking
 from . import waffle
 
 # pylint: disable=ungrouped-imports
@@ -96,6 +97,7 @@ class BlockCompletionManager(models.Manager):
                 block_key=block_key,
                 defaults={'completion': completion},
             )
+            tracking.track_completion_event(obj, completion, is_new)
             if not is_new and obj.completion != completion:
                 obj.completion = completion
                 obj.full_clean()
